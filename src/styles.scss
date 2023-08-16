@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+// Utils
+@import "styles/variables/variables.scss";
+@import "styles/utilities/breakpoints.scss";
+@import "styles/utilities/utilities.scss";
+
+// Styles
+@import "styles/styles/typography.scss";
+@import "styles/styles/mat-buttons.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Dev only - DELETE
+.component_grid--container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 32px;
+  padding: 8px;
+}
+
+.component_grid--row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.section {
+  margin-top: 32px;
+}
