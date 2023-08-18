@@ -1,35 +1,18 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
-$core-colors: (
-  100: #e1f4fc,
-  300: #2cb2ea,
-  500: #0097d8,
-  700: #0074b1,
-  contrast: (
-    100: #000000,
-    300: #000000,
-    500: #ffffff,
-    700: #ffffff,
-  ),
-);
-
-$core-accent: (
-  300: #eb1542,
-  500: #c7003f,
-  700: #92003b,
-  contrast: (
-    300: #ffffff,
-    500: #ffffff,
-    700: #ffffff,
-  ),
-);
-
-$my-primary: mat.define-palette($core-colors, 500, 300, 700);
+$my-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
 $my-accent: mat.define-palette(mat.$pink-palette, 500, 300, 700);
 $my-warn: mat.define-palette(mat.$red-palette);
 
-$my-theme: mat.define-light-theme(
+$my-primary-dark: mat.define-palette(mat.$red-palette, 900, 400, 800);
+$my-accent-dark: mat.define-palette(mat.$orange-palette, 900, 300, 700);
+$my-warn-dark: mat.define-palette(mat.$red-palette);
+
+// Non-Theme Variables
+$my-disabled: mat.define-palette(mat.$grey-palette, 500, 300, 700);
+
+$my-light-theme: mat.define-light-theme(
   (
     color: (
       primary: $my-primary,
@@ -40,4 +23,31 @@ $my-theme: mat.define-light-theme(
   )
 );
 
-@include mat.all-component-themes($my-theme);
+$my-dark-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary-dark,
+      accent: $my-accent-dark,
+      warn: $my-warn,
+    ),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($my-light-theme);
+
+.is-dark-theme {
+  @include mat.all-component-themes($my-dark-theme);
+}
+
+:root {
+  --theme-primary: #{mat.get-color-from-palette($my-primary, default)};
+  --theme-accent: #{mat.get-color-from-palette($my-accent, default)};
+  --theme-warn: #{mat.get-color-from-palette($my-warn, default)};
+  --theme-disabled: #{mat.get-color-from-palette($my-disabled, default)};
+}
+
+.is-dark-theme {
+  --theme-primary: #{mat.get-color-from-palette($my-primary-dark, default)};
+  --theme-accent: #{mat.get-color-from-palette($my-accent-dark, default)};
+}

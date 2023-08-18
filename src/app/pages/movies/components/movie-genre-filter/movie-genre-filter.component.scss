@@ -1,0 +1,13 @@
+.genre-wrapper {
+  background: var(--movie-blue);
+  height: 100%;
+}
+
+.genre-button {
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.selected--genre {
+  background-color: var(--movie-blue-dark) !important;
+}

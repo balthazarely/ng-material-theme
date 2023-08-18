@@ -1,0 +1,29 @@
+.theme-container {
+  display: flex;
+  gap: 16px;
+  .theme-wrapper {
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    .theme-box {
+      height: 100px;
+      width: 100px;
+      border-radius: 12px;
+    }
+    .color-primary {
+      background: var(--theme-primary);
+    }
+    .color-accent {
+      background: var(--theme-accent);
+    }
+    .color-warn {
+      background: var(--theme-warn);
+    }
+    .color-disabled {
+      background: var(--theme-disabled);
+    }
+  }
+}

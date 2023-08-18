@@ -10,6 +10,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const matImportExports = [
   MatButtonModule,
@@ -23,6 +25,8 @@ const matImportExports = [
   MatNativeDateModule,
   MatDatepickerModule,
   MatInputModule,
+  MatChipsModule,
+  MatGridListModule,
 ];
 
 @NgModule({

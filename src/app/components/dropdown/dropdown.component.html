@@ -1,0 +1,26 @@
+<mat-form-field>
+  <mat-label>Credit Card</mat-label>
+  <span matPrefix>
+    <mat-icon
+      class="mx-1 icon-grey"
+      iconPositionEnd
+      aria-hidden="false"
+      aria-label="button"
+      fontIcon="credit_card"
+    ></mat-icon
+  ></span>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Toppings</mat-label>
+  <mat-select multiple>
+    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+      topping
+    }}</mat-option>
+  </mat-select>
+</mat-form-field>

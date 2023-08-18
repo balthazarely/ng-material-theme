@@ -1,10 +1,10 @@
 @import "../styles/utilities/breakpoints.scss";
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 64px;
   @include respond-to("large") {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
   }
 }

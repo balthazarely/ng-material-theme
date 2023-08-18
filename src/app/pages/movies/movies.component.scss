@@ -1,0 +1,13 @@
+.movie-grid-container {
+  display: flex;
+  .movie-grid-genre-container {
+    width: 200px;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  .movie-grid-movie-container {
+    width: 100%;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+}

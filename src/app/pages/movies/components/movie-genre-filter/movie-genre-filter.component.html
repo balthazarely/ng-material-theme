@@ -1,0 +1,26 @@
+<div class="genre-wrapper" *ngIf="genres">
+  <button
+    (click)="selectGenre(undefined)"
+    mat-flat-button
+    color="primary"
+    class="genre-button"
+    [ngClass]="{
+      'selected--genre': selectedGenre === undefined
+    }"
+  >
+    Now Playing
+  </button>
+  <div *ngFor="let genre of genres">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="selectGenre(genre.id)"
+      class="genre-button"
+      [ngClass]="{
+        'selected--genre': genre.id === selectedGenre
+      }"
+    >
+      {{ genre.name }}
+    </button>
+  </div>
+</div>
